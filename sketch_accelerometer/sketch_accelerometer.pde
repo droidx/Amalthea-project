@@ -1,3 +1,5 @@
+/*arduino code
+*/
 
 const int groundpin = 18;             // analog input pin 4 -- ground
 const int powerpin = 19;              // analog input pin 5 -- voltage
