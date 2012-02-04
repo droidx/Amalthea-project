@@ -1,3 +1,8 @@
+/*processing code for mouse control
+uses the robot library
+serial read from COM Port 0 used by arduino
+*/
+
 import java.awt.Robot;
 import java.awt.AWTException;
 import java.awt.event.InputEvent;
@@ -33,58 +38,55 @@ void draw()
 if ( myPort.available() > 0) { // If data is available,
 val = myPort.read(); // read it and store it in val
 }
-background(255); // Set background to white
-//d=5;
-//x=xc;
-//y=yc;
+background(255); 
 if(y<=(height-5))
 {
-if(val==3)
-{
-for(iter=0;iter<3;iter++)
-{
-y=(y+1);
-robby.mouseMove(x, y);
-}
-}
+  if(val==3)
+  {
+    for(iter=0;iter<3;iter++)
+    {
+      y=(y+1);
+      robby.mouseMove(x, y);
+    }
+  }
 }
 if(val==2)
 {
-for(iter=0;iter<3;iter++)
-{
-y=(y-1);
-robby.mouseMove(x, y);
-}
+  for(iter=0;iter<3;iter++)
+  {
+    y=(y-1);
+  robby.mouseMove(x, y);
+  }
 }
 
 if(x<=(width-5))
 {
-if(val==1)
-{
-for(iter=0;iter<3;iter++)
-{
-x=(x+1);
-robby.mouseMove(x, y);
-}
-}
+  if(val==1)
+  {
+    for(iter=0;iter<3;iter++)
+    {
+      x=(x+1);
+      robby.mouseMove(x, y);
+    }
+  }
 }
 if(val==0)
 {
   for(iter=0;iter<3;iter++)
   {
-  x=(x-1);
-  robby.mouseMove(x, y);
-}
+    x=(x-1);
+    robby.mouseMove(x, y);
+  }
 }
 
 if(val==4)
 {
-robby.mousePress(InputEvent.BUTTON1_MASK);
-robby.mouseRelease(InputEvent.BUTTON1_MASK);
-robby.delay(300);
+  robby.mousePress(InputEvent.BUTTON1_MASK);
+  robby.mouseRelease(InputEvent.BUTTON1_MASK);
+  robby.delay(300);
 }
 else
-robby.mouseMove(x, y);
+  robby.mouseMove(x, y);
 
 myPort.clear();
 // if(keyCode==ENTER)
