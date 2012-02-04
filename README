@@ -1,1 +1,6 @@
-This project includes the code written for arduino and processing.
+
+Amalthea-project -- Quardiplegic's peripheral
+
+sketch_accelerometer: arduino's code with accelerometer
+
+sketch_mouse_move: processing sketch
